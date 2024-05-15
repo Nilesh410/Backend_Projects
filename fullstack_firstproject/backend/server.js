@@ -6,7 +6,7 @@ app.get("/",(req,res)=>{
     res.send("<h1>First Full Stack Project</h1> ")
 })
 
-app.get("/product_info",(req,res)=>{
+app.get("/api/product_info",(req,res)=>{
     const info=[
         {
             id:1,
