@@ -2,11 +2,11 @@ import express from 'express';
 import 'dotenv/config'
 const app=express();
 
-app.get("/",(req,res)=>{
-    res.send("<h1>First Full Stack Project</h1> ")
-})
+// app.get("/",(req,res)=>{
+//     res.send("<h1>First Full Stack Project</h1> ")
+// })
 
-app.get("/api/product_info",(req,res)=>{
+app.get("/api/infos",(req,res)=>{
     const info=[
         {
             id:1,

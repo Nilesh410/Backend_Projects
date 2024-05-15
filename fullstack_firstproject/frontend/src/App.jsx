@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import axios from "axios";
+import axios from 'axios';
 function App() {
   // const [count, setCount] = useState(0)
   const [infos,setProductinfo]=useState([])
   useEffect(()=>{
-    axios.get("/api/product_info")
+    axios.get('/api/infos')
     .then((response)=>{setProductinfo(response.data)})
-    .cath((error)=>{console.log(error)})
+    .catch((error)=>{console.log(error)})
   })
   return (
     <>
@@ -19,12 +19,13 @@ function App() {
       <p>PRODUCT_INFO:{infos.length}</p>
 
       {
-        infos.map((info,index)=>{
+        infos.map((info,index)=>(
           <div key={info.id}>
-              <h3>{info.product_name}</h3>
-              <h2>{info.product_price}</h2>
+              <h2>{"Product Id:"+info.id}</h2>
+              <h3>{"Product_Name:"+info.product_name}</h3>
+              <h4>{"Product_Price"+info.product_price}</h4>
           </div>
-        })
+        ))
       }
     </>
   )
